@@ -49,6 +49,7 @@ public class ProductController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    // pagination and sorting both in one api
     @GetMapping("/pagination/{offset}/{pageSize}/{field}")
     public ResponseEntity<ApiReponse> getAllProductsWithPaginationAndSorting(@PathVariable int offset, @PathVariable int pageSize, String field) {
         Page<Product> list = this.productService.findALlProductsWithPaginationAndSorting(offset,pageSize,field);
